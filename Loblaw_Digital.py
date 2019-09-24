@@ -13,14 +13,14 @@ import numpy as np
 
 
 import pandas
-df = pandas.read_csv('/Users/sarthakkatyal/Desktop/Loblaw_Assignment.csv')
+df = pandas.read_csv('Loblaw_Assignment.csv')
 
 
 # In[6]:
 
 
 k = 0
-while df['Img1'][k] != None or df['Img2'][k] != None:
+for m in range(0, len(df)):
     start_time = timeit.default_timer()
     first = df['Img1'][k]
     second = df['Img2'][k]
@@ -75,7 +75,7 @@ while df['Img1'][k] != None or df['Img2'][k] != None:
     
     df['Similarity'][k] = similarity
     df['Elapsed'][k] = elapsed
-    df.to_csv('/Users/sarthakkatyal/Desktop/Loblaw_Assignment.csv')
+    df.to_csv('Loblaw_Assignment.csv')
     
     k = k + 1
     
